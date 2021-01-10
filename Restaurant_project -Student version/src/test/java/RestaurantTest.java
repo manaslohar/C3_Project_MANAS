@@ -96,4 +96,17 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<Part 3 of Assignments test cases>>>>>>>>>>>>>
+    //Requirements:
+    //2. Order Total to be calculated as per the price of selected items by user
+    @Test
+    public void order_total_should_be_calclulated_as_total_price_of_selected_items(){
+        initRestaurant();
+        RestaurantService service = new RestaurantService();
+        service.selectMenuItem("Sweet corn soup");
+        service.selectMenuItem("Vegetable lasagne");
+        assertEquals(388, restaurant.getOrderTotal(service.getSelectedItems()));
+    }
+    //as per the instructions of assignment:
+    //ignoring the methods written for output formatting
 }

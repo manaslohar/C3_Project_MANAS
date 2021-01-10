@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.*;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,5 +68,23 @@ class RestaurantServiceTest {
     }
 
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    //<<<<<<<<<<<<<<<<Part 3 of Assignments test cases>>>>>>>>>>>>>
+    //Requirements:
+    //1. User should be able to select the items from menu and selection list should get updated
+
+    @Test
+    public void select_menu_item_should_increase_the_size_of_selected_menu_items_list_by_1(){
+        int initialNumberOfSelectedItems = service.getSelectedItems().size();
+        service.selectMenuItem("Sweet corn soup");
+        assertEquals(initialNumberOfSelectedItems +1,service.getSelectedItems().size());
+
+    }
+
+
+
+    //as per the instructions of assignment:
+    //The name of the item returned when the user selects the item is always in the menu, hence a fail case scenario/Exception scenario would be unnecessary
 
 }
