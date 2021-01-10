@@ -66,5 +66,19 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderTotal(List<String> selectedItems) {
+        int orderTotal = 0;
+        for(String itemName : selectedItems){
+            orderTotal = orderTotal + getMenuItemsPrice(itemName);
+        }
+        //System.out.println(orderTotal);
+        return orderTotal;
+
+    }
+    public int getMenuItemsPrice(String itemName){
+
+        int itemPrice = Integer.parseInt(findItemByName(itemName).toString().replaceAll("[^\\d]", ""));
+        return itemPrice;
+    }
 
 }

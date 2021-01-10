@@ -34,6 +34,14 @@ public class RestaurantService {
         return restaurants;
     }
 
+    private static List<String> selectedItems = new ArrayList<>();
 
+    public List<String> getSelectedItems() {
+        return selectedItems;
+    }
+
+    public void selectMenuItem(String itemName) {
+        selectedItems.add(itemName);
+    }
 
 }
